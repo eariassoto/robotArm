@@ -1,11 +1,16 @@
+CC=gcc
+LD = $(CC)
+CFLAGS=-m32
+LDFLAGS = -m32
+
 robotasm.o: robotasm.asm
 	nasm -felf robotasm.asm
 
 robotarm.o: robotarm.c
-	gcc -c robotarm.c -lGL -lGLU -lglut
+	$(CC) $(CFLAGS) -c robotarm.c -lGL -lGLU -lglut
 
 tarea: robotasm.o robotarm.o
-	gcc robotarm.o robotasm.o -lGL -lGLU -lglut -o robotarm
+	$(LD) $(LDFLAGS) robotarm.o robotasm.o -lGL -lGLU -lglut -o robotarm
 	./robotarm instrucciones.txt
 	
 clean:

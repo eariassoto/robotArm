@@ -15,8 +15,8 @@
 // Deben ser implementadas usando código ensamblador en la tarea
 #include <stdio.h>
 
-extern specialKey(int, int, int);
-extern iniciaCiclo(char*);
+extern void specialKey(int, int, int);
+extern void iniciaCiclo(char*);
 
 // Variables para el ejemplo
 char * miArchivo = NULL;
